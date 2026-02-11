@@ -1,3 +1,98 @@
+/* --- CONFIGURATION DES COULEURS (Variables) --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --logo-color: #4285F4; /* Bleu Google classique */
+    --input-bg: #ffffff;
+    --btn-bg: #f1f1f1;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --logo-color: #8ab4f8; /* Bleu plus clair pour le contraste */
+    --input-bg: #333333;
+    --btn-bg: #333333;
+}
+
+/* --- STYLES GÉNÉRAUX --- */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#search-container {
+    text-align: center;
+}
+
+/* --- LE LOGO ET SON ANIMATION SHINE --- */
+#logo {
+    cursor: pointer;
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+
+    /* Le bandeau blanc (#ffffff) reste fixe au milieu du dégradé */
+    background: linear-gradient(
+            to right,
+            var(--logo-color) 0%,
+            var(--logo-color) 40%,
+            #ffffff 50%,
+            var(--logo-color) 60%,
+            var(--logo-color) 100%
+    );
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* --- FORMULAIRE DE RECHERCHE --- */
+#search-bar {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 300px;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.3s;
+}
+
+#search-button {
+    padding: 13px 20px;
+    border: none;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#search-button:hover {
+    filter: brightness(0.9);
+}
+
+/* --- SWITCH MODE NUIT (Positionné en bas à gauche) --- */
 #theme-switch-container {
     position: fixed;
     bottom: 20px;
@@ -5,7 +100,6 @@
     z-index: 1000;
 }
 
-/* Style du Switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -22,16 +116,14 @@
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background-color: #ccc;
     transition: .4s;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 5px;
+    border-radius: 34px;
 }
 
 .slider:before {
@@ -44,6 +136,7 @@
     background-color: white;
     transition: .4s;
     z-index: 2;
+    border-radius: 50%;
 }
 
 input:checked + .slider {
@@ -54,89 +147,7 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
 .icon {
     font-size: 14px;
     user-select: none;
-}
-
-/* --- VARIABLES DE THEME --- */
-body {
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Classe activée par le JS */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-
-body.dark-mode #search-bar {
-    background-color: #333;
-    color: white;
-    border-color: #555;
-}
-
-body.dark-mode #search-button {
-    background-color: #333;
-    color: #e8eaed;
-}
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
-#search-container {
-    text-align: center;
-}
-
-#logo {
-    cursor:pointer;
-    font-size: 5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-    color: #4285F4;
-    background: linear-gradient(to right, #4285F4 100%, #4285F4 60%, #ffffff 50%, #4285F4 40%, #4285F4 0%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
-}
-
-@keyframes shine {
-    to {
-        background-position: 200% center;
-    }
-}
-
-#search-bar {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    width: 300px;
-    font-size: 1em;
-}
-
-#search-button {
-    padding: 13px 20px;
-    border: none;
-    background-color: #f1f1f1;
-    color: #3c4043;
-    border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
 }
