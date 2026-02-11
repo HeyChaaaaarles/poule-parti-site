@@ -1,20 +1,31 @@
-document.getElementById('search-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    window.location.href = 'https://www.youtube.com./watch?v=dQw4w9WgXcQ';
-});
-const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const searchForm = document.getElementById('search-form');
 
-themeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
+    if (themeToggle) {
+        const savedTheme = localStorage.getItem('theme');
 
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.checked = true;
+        }
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // --- GESTION DU FORMULAIRE (Le Rickroll) ---
+    if (searchForm) {
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        });
     }
 });
-
-if (localStorage.getItem('theme') === 'dark') {
-    themeToggle.checked = true;
-    document.body.classList.add('dark-mode');
-}
