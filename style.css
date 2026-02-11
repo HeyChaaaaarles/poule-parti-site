@@ -13,19 +13,17 @@ body {
 }
 
 #logo {
+    cursor:pointer;
     font-size: 5em;
     font-weight: bold;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
     color: #4285F4;
-
     background: linear-gradient(to right, #4285F4 0%, #4285F4 40%, #ffffff 50%, #4285F4 60%, #4285F4 100%);
     background-size: 200% auto;
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     animation: shine 3s linear infinite;
 }
 
