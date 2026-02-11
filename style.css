@@ -1,21 +1,21 @@
-/* --- CONFIGURATION DES COULEURS (Variables) --- */
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
-    --logo-color: #4285F4; /* Bleu Google classique */
+    --logo-color: #4285F4;
+    --shine-color: rgba(255, 255, 255, 0.9);
     --input-bg: #ffffff;
     --btn-bg: #f1f1f1;
 }
 
 body.dark-mode {
-    --bg-color: #1a1a1a;
+    --bg-color: #0f0f0f;
     --text-color: #ffffff;
-    --logo-color: #8ab4f8; /* Bleu plus clair pour le contraste */
-    --input-bg: #333333;
-    --btn-bg: #333333;
+    --logo-color: #00d4ff;
+    --shine-color: #ffffff;
+    --input-bg: #1e1e1e;
+    --btn-bg: #2a2a2a;
 }
 
-/* --- STYLES GÉNÉRAUX --- */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -33,7 +33,6 @@ body {
     text-align: center;
 }
 
-/* --- LE LOGO ET SON ANIMATION SHINE --- */
 #logo {
     cursor: pointer;
     font-size: 5em;
@@ -41,21 +40,23 @@ body {
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
-
-    /* Le bandeau blanc (#ffffff) reste fixe au milieu du dégradé */
     background: linear-gradient(
             to right,
             var(--logo-color) 0%,
-            var(--logo-color) 40%,
-            #ffffff 50%,
-            var(--logo-color) 60%,
+            var(--logo-color) 35%,
+            var(--shine-color) 50%,
+            var(--logo-color) 65%,
             var(--logo-color) 100%
     );
     background-size: 200% auto;
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
+    filter: drop-shadow(0 0 2px rgba(0, 212, 255, 0.2));
+    animation: shine 2.5s linear infinite;
+}
+
+body.dark-mode #logo {
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
 }
 
 @keyframes shine {
@@ -64,7 +65,6 @@ body {
     }
 }
 
-/* --- FORMULAIRE DE RECHERCHE --- */
 #search-bar {
     padding: 10px 20px;
     border: 1px solid #ccc;
@@ -92,7 +92,6 @@ body {
     filter: brightness(0.9);
 }
 
-/* --- SWITCH MODE NUIT (Positionné en bas à gauche) --- */
 #theme-switch-container {
     position: fixed;
     bottom: 20px;
