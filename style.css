@@ -29,7 +29,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#search-container {
+.search-container {
     text-align: center;
 }
 
@@ -68,7 +68,7 @@ body.dark-mode #logo {
     }
 }
 
-#search-bar {
+.search-bar {
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -80,7 +80,7 @@ body.dark-mode #logo {
     transition: all 0.3s;
 }
 
-#search-button {
+.search-button {
     padding: 13px 20px;
     border: none;
     background-color: var(--btn-bg);
@@ -91,11 +91,11 @@ body.dark-mode #logo {
     transition: all 0.3s;
 }
 
-#search-button:hover {
+.search-button:hover {
     filter: brightness(0.9);
 }
 
-#theme-switch-container {
+.theme-switch-container {
     position: fixed;
     bottom: 20px;
     left: 20px;
