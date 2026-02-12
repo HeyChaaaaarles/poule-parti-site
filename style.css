@@ -33,7 +33,7 @@ body {
     text-align: center;
 }
 
-#logo {
+.logo {
     cursor: default;
     font-size: 5em;
     font-weight: bold;
@@ -53,6 +53,9 @@ body {
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 2px rgba(0, 212, 255, 0.2));
     animation: shine 2.5s linear infinite;
+}
+.logo:hover {
+    animation: shine 2.5s linear infinite, shake 5s cubic-bezier(.36,.07,.19,.97) both infinite;
 }
 
 body.dark-mode #logo {
@@ -149,4 +152,21 @@ input:checked + .slider:before {
 .icon {
     font-size: 14px;
     user-select: none;
+}
+
+/*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*\
+▓▓▓▓▓▓▓    SHAKE SHAKE SHAKE   ▓▓▓▓▓▓▓
+\*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*/
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
