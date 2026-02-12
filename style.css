@@ -154,6 +154,7 @@ input:checked + .slider:before {
     user-select: none;
 }
 
+
 /*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*\
 ▓▓▓▓▓▓▓    SHAKE SHAKE SHAKE   ▓▓▓▓▓▓▓
 \*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*/
@@ -163,7 +164,6 @@ input:checked + .slider:before {
     30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
     40%, 60% { transform: translate3d(4px, 0, 0); }
 }
-
 .shake {
     animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
