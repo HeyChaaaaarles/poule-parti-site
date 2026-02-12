@@ -34,7 +34,7 @@ body {
 }
 
 #logo {
-    cursor: pointer;
+    cursor: default;
     font-size: 5em;
     font-weight: bold;
     margin-bottom: 20px;
