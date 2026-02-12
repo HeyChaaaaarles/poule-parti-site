@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchForm) {
         searchForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+            window.location.href = 'https://www.youtube.com./watch?v=dQw4w9WgXcQ';
         });
     }
 });
