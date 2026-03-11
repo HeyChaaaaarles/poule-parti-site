@@ -1,0 +1,12 @@
+[Unit]
+Description=Troll Proxy for Grafana
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/var/www/poule-parti.site/server/proxy
+ExecStart=/usr/bin/python3 troll_logic.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
