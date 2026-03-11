@@ -1,4 +1,31 @@
-img{
-    height: 200px;
-    width: 200px;
+body{
+    background-color: #181b1f;
+}
+.logo{
+    height: 100%;
+    width: 30%;
+}
+.Name{
+    height: 150%;
+    width: 70%;
+}
+.css-1ikvyxy {
+    align-items: center;
+    border-bottom:1px solid rgba(204, 204, 220, 0.12);
+    border-right: 1px solid rgba(204, 204, 220, 0.12);
+    display: flex;
+    width: 15%
+}
+.graphContainer{
+    margin-left:24%;
+    width: 75%;
+    border: 1px solid rgba(204, 204, 220, 0.12);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+.graph{
+    width: 100%;
+    height: 750px;
 }
