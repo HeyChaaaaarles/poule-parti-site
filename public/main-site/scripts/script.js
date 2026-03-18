@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const searchForm = document.getElementById('search-form');
+    const mailButton = document.getElementById('mailito');
+    const statsButton = document.getElementById('stats');
 
     if (themeToggle) {
         const savedTheme = localStorage.getItem('theme');
@@ -28,4 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'https://www.youtube.com./watch?v=dQw4w9WgXcQ';
         });
     }
+    // --- stats.poule-parti.site
+    if (statsButton) {
+        statsButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = 'https://stats.poule-parti.site';
+        });
+    }
+    // --- mail.poule-parti.site
+    if (mailButton) {
+        mailButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = 'https://mail.poule-parti.site';
+        });
+    }
+
 });
