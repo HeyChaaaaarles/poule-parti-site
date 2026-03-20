@@ -1,0 +1,198 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --logo-color: #4285F4;
+    --shine-color: rgba(255, 255, 255, 0.9);
+    --input-bg: #ffffff;
+    --btn-bg: #f1f1f1;
+}
+
+body.dark-mode {
+    --bg-color: #0f0f0f;
+    --text-color: #ffffff;
+    --logo-color: #00d4ff;
+    --shine-color: #ffffff;
+    --input-bg: #1e1e1e;
+    --btn-bg: #2a2a2a;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.search-container {
+    text-align: center;
+}
+
+.logo {
+    cursor: default;
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+            to right,
+            var(--logo-color) 0%,
+            var(--logo-color) 35%,
+            var(--shine-color) 50%,
+            var(--logo-color) 65%,
+            var(--logo-color) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 2px rgba(0, 212, 255, 0.2));
+    animation: shine 2.5s linear infinite;
+}
+.logo:hover {
+    animation: shine 2.5s linear infinite, shake 5s cubic-bezier(.36,.07,.19,.97) both infinite;
+}
+
+body.dark-mode #logo {
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+}
+
+
+.search-bar {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 300px;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-button {
+    padding: 13px 20px;
+    border: none;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.search-button:hover {
+    filter: brightness(0.9);
+}
+
+.theme-switch-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2c3e50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.icon {
+    font-size: 14px;
+    user-select: none;
+}
+
+.pages-switch-container{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.pages-button{
+    background-color: #4285F4;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 15px;
+    color:#fff;
+    border: none;
+}
+.pages-button:hover{
+    background-color: #1100ff;
+    color: #fff;
+
+}
+
+
+
+/*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*\
+▓▓▓▓▓▓▓    SHAKE SHAKE SHAKE   ▓▓▓▓▓▓▓
+\*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*/
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+.shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
+/*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*\
+▓▓▓▓▓▓▓▓▓   Rise and Shine   ▓▓▓▓▓▓▓▓▓
+\*▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓*/
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
