@@ -61,7 +61,6 @@ header{
 
 .headerContainer{
     display: flex;
-    background-color: lime;
 }
 
 .lowerBody{
@@ -82,7 +81,7 @@ header{
 
 .pages-button{
     font-family: 'Michroma',cursive;
-    background-color: #dfdfc9;
+    background-color: #f5f5dc;
     border-radius: 5px;
     padding: 10px;
     margin-left: 15px;
