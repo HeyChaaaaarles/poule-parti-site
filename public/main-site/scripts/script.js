@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mailButton = document.getElementById('mailito');
     const statsButton = document.getElementById('stats');
     const gogoleButton = document.getElementById('gogole');
+    const cloudButton = document.getElementById('cloud');
 
     if (themeToggle) {
         const savedTheme = localStorage.getItem('theme');
@@ -43,5 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'https://gogole.poule-parti.site';
         })
     }
-
+    // --- cloud.poule-parti.site
+    if (cloudButton) {
+        cloudButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = 'https://cloud.poule-parti.site';
+        });
+    }
 });
