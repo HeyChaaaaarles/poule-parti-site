@@ -74,18 +74,18 @@ header{
 }
 
 .pages-switch-container{
+    background-color: deeppink;
     position: absolute;
     display: grid;
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(2, 6fr);
     gap: 30px;
-    padding: 10px;
 }
 
 .pages-button{
-    width: 120%;
-    height: 170%;
+    width: 110%;
+    height: 150%;
     font-family: 'Michroma',cursive;
     background-color: #f5f5dc;
     border-radius: 5px;
