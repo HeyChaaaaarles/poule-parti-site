@@ -79,18 +79,20 @@ header{
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(2, 6fr);
-    gap: 10px;
+    gap: 30px;
     padding: 10px;
 }
 
 .pages-button{
+    width: 110%;
+    height: 150%;
     font-family: 'Michroma',cursive;
     background-color: #f5f5dc;
     border-radius: 5px;
     border:1px #dfdfc9 solid;
     padding: 10px;
-    margin-left: 15px;
     color:#8b0000;
+    font-size: large;
 }
 .pages-button:hover{
     background-color: #8b0000;
