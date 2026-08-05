@@ -69,23 +69,24 @@ header{
     align-items: center;
     justify-content: center;
     height: 100%;
-    margin: 20%;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .pages-switch-container{
+    height: 20%;
+    width: 20%;
     background-color: deeppink;
     position: absolute;
     display: grid;
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(2, 6fr);
-    gap: 30px;
+    gap: 5px;
 }
 
 .pages-button{
-    width: 110%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     font-family: 'Michroma',cursive;
     background-color: #f5f5dc;
     border-radius: 5px;
