@@ -70,12 +70,12 @@ header{
     justify-content: center;
     height: 100%;
     transition: background-color 0.3s, color 0.3s;
+    margin: 20%;
 }
 
 .pages-switch-container{
     height: 20%;
     width: 20%;
-    background-color: deeppink;
     position: absolute;
     display: grid;
     align-items: center;
