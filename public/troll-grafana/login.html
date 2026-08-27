@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphana - Connexion</title>
+    <link rel="icon" type="image/png" href="images/graphana.png">
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="scripts/login.js" defer></script>
+</head>
+<body class="login-page">
+<div class="login-box">
+    <div class="login-header">
+        <img class="login-logo" src="images/graphana.png" alt="Graphana Logo">
+        <h1>Welcome to Graphana</h1>
+    </div>
+
+    <form class="login-form" action="#" method="POST">
+        <div class="form-group">
+            <label for="username">Email or username</label>
+            <input type="text" id="username" name="user" placeholder="email or username" autocomplete="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-password-wrapper">
+                <input type="password" id="password" name="password" placeholder="password" autocomplete="current-password" required>
+                <button type="button" class="toggle-password" aria-label="Show password">
+
+                </button>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Log in</button>
+
+        <div class="form-footer">
+            <a href="#" id="forgot-pass" class="forgot-password">Forgot your password?</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
